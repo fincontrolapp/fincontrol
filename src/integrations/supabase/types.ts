@@ -14,7 +14,288 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      cash_flow: {
+        Row: {
+          account: string
+          category: string
+          created_at: string
+          date: string
+          description: string
+          id: string
+          status: string
+          type: string
+          updated_at: string
+          user_id: string
+          value: number
+        }
+        Insert: {
+          account?: string
+          category?: string
+          created_at?: string
+          date?: string
+          description: string
+          id?: string
+          status?: string
+          type: string
+          updated_at?: string
+          user_id: string
+          value?: number
+        }
+        Update: {
+          account?: string
+          category?: string
+          created_at?: string
+          date?: string
+          description?: string
+          id?: string
+          status?: string
+          type?: string
+          updated_at?: string
+          user_id?: string
+          value?: number
+        }
+        Relationships: []
+      }
+      chat_messages: {
+        Row: {
+          content: string
+          created_at: string
+          id: string
+          role: string
+          user_id: string
+        }
+        Insert: {
+          content: string
+          created_at?: string
+          id?: string
+          role: string
+          user_id: string
+        }
+        Update: {
+          content?: string
+          created_at?: string
+          id?: string
+          role?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      clients: {
+        Row: {
+          address: string
+          birth_date: string
+          created_at: string
+          email: string
+          id: string
+          name: string
+          phone: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          address?: string
+          birth_date?: string
+          created_at?: string
+          email?: string
+          id?: string
+          name: string
+          phone?: string
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          address?: string
+          birth_date?: string
+          created_at?: string
+          email?: string
+          id?: string
+          name?: string
+          phone?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      daily_cash: {
+        Row: {
+          cash_in: number
+          cash_out: number
+          closing_value: number
+          created_at: string
+          credit_in: number
+          date: string
+          debit_in: number
+          description: string
+          id: string
+          opening_value: number
+          pix_in: number
+          time: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          cash_in?: number
+          cash_out?: number
+          closing_value?: number
+          created_at?: string
+          credit_in?: number
+          date?: string
+          debit_in?: number
+          description?: string
+          id?: string
+          opening_value?: number
+          pix_in?: number
+          time?: string
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          cash_in?: number
+          cash_out?: number
+          closing_value?: number
+          created_at?: string
+          credit_in?: number
+          date?: string
+          debit_in?: number
+          description?: string
+          id?: string
+          opening_value?: number
+          pix_in?: number
+          time?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      inventory: {
+        Row: {
+          code: string
+          created_at: string
+          current_balance: number
+          entries: number
+          exits: number
+          id: string
+          min_stock: number
+          name: string
+          total_value: number
+          unit: string
+          unit_cost: number
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          code?: string
+          created_at?: string
+          current_balance?: number
+          entries?: number
+          exits?: number
+          id?: string
+          min_stock?: number
+          name: string
+          total_value?: number
+          unit?: string
+          unit_cost?: number
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          code?: string
+          created_at?: string
+          current_balance?: number
+          entries?: number
+          exits?: number
+          id?: string
+          min_stock?: number
+          name?: string
+          total_value?: number
+          unit?: string
+          unit_cost?: number
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      invoices: {
+        Row: {
+          client_supplier: string
+          cnpj_cpf: string
+          cofins: number
+          competence: string
+          created_at: string
+          gross_value: number
+          id: string
+          iss: number
+          issue_date: string
+          net_value: number
+          number: string
+          pdf_link: string
+          pis: number
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          client_supplier?: string
+          cnpj_cpf?: string
+          cofins?: number
+          competence?: string
+          created_at?: string
+          gross_value?: number
+          id?: string
+          iss?: number
+          issue_date?: string
+          net_value?: number
+          number?: string
+          pdf_link?: string
+          pis?: number
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          client_supplier?: string
+          cnpj_cpf?: string
+          cofins?: number
+          competence?: string
+          created_at?: string
+          gross_value?: number
+          id?: string
+          iss?: number
+          issue_date?: string
+          net_value?: number
+          number?: string
+          pdf_link?: string
+          pis?: number
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      profiles: {
+        Row: {
+          created_at: string
+          display_name: string | null
+          email: string | null
+          id: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          display_name?: string | null
+          email?: string | null
+          id?: string
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          display_name?: string | null
+          email?: string | null
+          id?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
