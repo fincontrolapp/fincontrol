@@ -11,8 +11,10 @@ import InvoicesPage from "@/pages/InvoicesPage";
 import InventoryPage from "@/pages/InventoryPage";
 import DailyCashPage from "@/pages/DailyCashPage";
 import ClientsPage from "@/pages/ClientsPage";
+import AIChatPage from "@/pages/AIChatPage";
+import SettingsPage from "@/pages/SettingsPage";
+import HelpPage from "@/pages/HelpPage";
 import AuthPage from "@/pages/AuthPage";
-import AIChatPanel from "@/components/AIChatPanel";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -44,9 +46,11 @@ function ProtectedRoutes() {
         <Route path="/estoque" element={<InventoryPage />} />
         <Route path="/caixa-diario" element={<DailyCashPage />} />
         <Route path="/clientes" element={<ClientsPage />} />
+        <Route path="/assistente" element={<AIChatPage />} />
+        <Route path="/configuracoes" element={<SettingsPage />} />
+        <Route path="/ajuda" element={<HelpPage />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
-      <AIChatPanel />
     </AppLayout>
   );
 }

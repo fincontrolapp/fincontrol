@@ -1,7 +1,7 @@
 import { NavLink, useLocation } from "react-router-dom";
 import {
   LayoutDashboard, ArrowLeftRight, FileText, Package, Wallet, Users,
-  ChevronLeft, ChevronRight, LogOut,
+  ChevronLeft, ChevronRight, LogOut, MessageSquare, Settings, HelpCircle,
 } from "lucide-react";
 import { useState } from "react";
 import { useAuth } from "@/hooks/useAuth";
@@ -15,10 +15,34 @@ const navItems = [
   { to: "/clientes", label: "Clientes", icon: Users },
 ];
 
+const secondaryItems = [
+  { to: "/assistente", label: "Assistente IA", icon: MessageSquare },
+  { to: "/configuracoes", label: "Configurações", icon: Settings },
+  { to: "/ajuda", label: "Ajuda", icon: HelpCircle },
+];
+
 export default function AppLayout({ children }: { children: React.ReactNode }) {
   const [collapsed, setCollapsed] = useState(false);
   const location = useLocation();
   const { user, signOut } = useAuth();
+
+  const renderNavItem = (item: { to: string; label: string; icon: any }) => {
+    const isActive = location.pathname === item.to;
+    return (
+      <NavLink
+        key={item.to}
+        to={item.to}
+        className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors ${
+          isActive
+            ? "bg-sidebar-accent text-sidebar-primary"
+            : "text-sidebar-foreground hover:bg-sidebar-accent hover:text-sidebar-accent-foreground"
+        }`}
+      >
+        <item.icon size={20} />
+        {!collapsed && <span>{item.label}</span>}
+      </NavLink>
+    );
+  };
 
   return (
     <div className="flex min-h-screen">
@@ -35,23 +59,13 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
         </div>
 
         <nav className="flex-1 py-4 space-y-1 px-2">
-          {navItems.map((item) => {
-            const isActive = location.pathname === item.to;
-            return (
-              <NavLink
-                key={item.to}
-                to={item.to}
-                className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors ${
-                  isActive
-                    ? "bg-sidebar-accent text-sidebar-primary"
-                    : "text-sidebar-foreground hover:bg-sidebar-accent hover:text-sidebar-accent-foreground"
-                }`}
-              >
-                <item.icon size={20} />
-                {!collapsed && <span>{item.label}</span>}
-              </NavLink>
-            );
-          })}
+          {!collapsed && <p className="text-[10px] uppercase tracking-widest text-sidebar-foreground/40 px-3 mb-2">Principal</p>}
+          {navItems.map(renderNavItem)}
+
+          <div className="my-3 border-t border-sidebar-border" />
+
+          {!collapsed && <p className="text-[10px] uppercase tracking-widest text-sidebar-foreground/40 px-3 mb-2">Ferramentas</p>}
+          {secondaryItems.map(renderNavItem)}
         </nav>
 
         <div className="p-3 border-t border-sidebar-border">
