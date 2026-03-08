@@ -157,8 +157,12 @@ export default function AgendamentosPage() {
         </Dialog>
       </div>
 
+      {/* AI Reminder */}
+      <div className="mb-6">
+        <AIReminder appointments={appointments} />
+      </div>
+
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        {/* Calendar */}
         <Card className="lg:col-span-1">
           <CardContent className="p-4 flex justify-center">
             <Calendar
