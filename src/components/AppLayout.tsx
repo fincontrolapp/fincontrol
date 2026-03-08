@@ -1,7 +1,7 @@
 import { NavLink, useLocation } from "react-router-dom";
 import {
   LayoutDashboard, ArrowLeftRight, FileText, Package, Wallet, Users,
-  ChevronLeft, ChevronRight, LogOut, MessageSquare, Settings, HelpCircle,
+  ChevronLeft, ChevronRight, LogOut, MessageSquare, Settings, CalendarDays,
 } from "lucide-react";
 import { useState } from "react";
 import { useAuth } from "@/hooks/useAuth";
