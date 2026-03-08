@@ -46,9 +46,9 @@ function ProtectedRoutes() {
         <Route path="/estoque" element={<InventoryPage />} />
         <Route path="/caixa-diario" element={<DailyCashPage />} />
         <Route path="/clientes" element={<ClientsPage />} />
+        <Route path="/agendamentos" element={<AgendamentosPage />} />
         <Route path="/assistente" element={<AIChatPage />} />
         <Route path="/configuracoes" element={<SettingsPage />} />
-        <Route path="/ajuda" element={<HelpPage />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </AppLayout>

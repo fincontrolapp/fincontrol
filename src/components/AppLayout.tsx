@@ -16,9 +16,9 @@ const navItems = [
 ];
 
 const secondaryItems = [
+  { to: "/agendamentos", label: "Agendamentos", icon: CalendarDays },
   { to: "/assistente", label: "Assistente IA", icon: MessageSquare },
   { to: "/configuracoes", label: "Configurações", icon: Settings },
-  { to: "/ajuda", label: "Ajuda", icon: HelpCircle },
 ];
 
 export default function AppLayout({ children }: { children: React.ReactNode }) {
