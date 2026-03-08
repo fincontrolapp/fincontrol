@@ -14,6 +14,7 @@ import { ptBR } from "date-fns/locale";
 import { cn } from "@/lib/utils";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
+import AIReminder from "@/components/AIReminder";
 
 interface Appointment {
   id: string;
@@ -156,8 +157,12 @@ export default function AgendamentosPage() {
         </Dialog>
       </div>
 
+      {/* AI Reminder */}
+      <div className="mb-6">
+        <AIReminder appointments={appointments} />
+      </div>
+
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        {/* Calendar */}
         <Card className="lg:col-span-1">
           <CardContent className="p-4 flex justify-center">
             <Calendar
