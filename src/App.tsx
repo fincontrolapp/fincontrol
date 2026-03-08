@@ -13,7 +13,7 @@ import DailyCashPage from "@/pages/DailyCashPage";
 import ClientsPage from "@/pages/ClientsPage";
 import AIChatPage from "@/pages/AIChatPage";
 import SettingsPage from "@/pages/SettingsPage";
-import HelpPage from "@/pages/HelpPage";
+import AgendamentosPage from "@/pages/AgendamentosPage";
 import AuthPage from "@/pages/AuthPage";
 import NotFound from "./pages/NotFound";
 
