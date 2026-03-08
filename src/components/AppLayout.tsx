@@ -1,7 +1,7 @@
 import { NavLink, useLocation } from "react-router-dom";
 import {
   LayoutDashboard, ArrowLeftRight, FileText, Package, Wallet, Users,
-  ChevronLeft, ChevronRight, LogOut, MessageSquare, Settings, HelpCircle,
+  ChevronLeft, ChevronRight, LogOut, MessageSquare, Settings, CalendarDays,
 } from "lucide-react";
 import { useState } from "react";
 import { useAuth } from "@/hooks/useAuth";
@@ -16,9 +16,9 @@ const navItems = [
 ];
 
 const secondaryItems = [
+  { to: "/agendamentos", label: "Agendamentos", icon: CalendarDays },
   { to: "/assistente", label: "Assistente IA", icon: MessageSquare },
   { to: "/configuracoes", label: "Configurações", icon: Settings },
-  { to: "/ajuda", label: "Ajuda", icon: HelpCircle },
 ];
 
 export default function AppLayout({ children }: { children: React.ReactNode }) {
